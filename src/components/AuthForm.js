@@ -5,7 +5,7 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import { authService, firebaseInstence } from "fbinstance";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 const AuthForm = () => {
   const [email, setEmail] = useState("");
 
@@ -44,29 +44,29 @@ const AuthForm = () => {
   return (
     <div>
       <form onSubmit={onSubmit}>
-        <input
+        <p><input
           onChange={onChange}
           name="email"
           type="email"
           placeholder="Email"
           required="required"
           value={email}
-        ></input>
-        <input
+        ></input></p>
+        <p><input
           onChange={onChange}
           name="password"
           type="password"
           placeholder="password"
           required="required"
           value={pw}
-        ></input>
+        ></input></p>
         <input
           type="submit"
           value={newaccount ? "Create Account" : "Log In"}
         ></input>
         {error}
       </form>
-      <span onClick={toggle}>{newaccount ? "sign  in" : "Create Account"}</span>
+      <h2 className="text-white" onClick={toggle}>{newaccount ? "sign  in" : "Create Account"}</h2>
     </div>
   );
 };

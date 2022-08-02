@@ -1,6 +1,8 @@
 import {useEffect, useState} from "react";
 import Approuter from "components/Router";
 import {authService} from "fbinstance";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App() {
     const [init, Setinit] = useState(false);
     const [isLoggedin, setIsLoggin] = useState(false);
@@ -21,8 +23,12 @@ function App() {
     {
         SetUserObj(Object.assign({}, authService.currentUser));
     }
-    return (<div >
+    return (<div className="container-fluid bg-secondary overflow-scroll">
+        <div className="row justify-content-center" style={{height:"100vh"}}>
+            <div className="col-8">
         {init?<Approuter refreshUser={refreshUser} isLoggedin={isLoggedin} userObj={userObj}/>:"Initializing..."}
+        </div>
+        </div>
     </div>
     
     );

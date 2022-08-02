@@ -45,23 +45,27 @@ const NweetFactory = ({ userObj }) => {
     Setattachment("");
   };
   return (
-    <form onSubmit={onSubmit}>
+    <div className="container">
+    <form onSubmit={onSubmit} className="row justify-content-around bg-secondary">
       <input
+        className="col-6 shadow-lg "
         onChange={onChange}
         value={nweet}
         type="text"
-        placeholder="what's ont your mind?"
+        placeholder="쓰고싶은말 쓰세요!"
         maxLength={120}
+
       ></input>
-      <input type="file" accept="image/*" onChange={onFileChange}></input>
-      <input type="submit" value={"Tweet"}></input>
+      <input  className="col-3" type="file" accept="image/*" onChange={onFileChange}></input>
+      <button className="btn btn-primary col-2" type="submit" >올리기!</button>
       {attachment && (
         <div>
-          <img src={attachment} width="50px" height="50px"></img>
+          <img src={attachment} className="img-thumbnail"></img>
           <button onClick={onClearePhotoClick}>clear!</button>
         </div>
       )}
     </form>
+    </div>
   );
 };
 export default NweetFactory;

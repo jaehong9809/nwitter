@@ -1,5 +1,6 @@
 import { authService, firebaseInstence } from "fbinstance";
 import React, { useState } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -19,15 +20,31 @@ const Auth = () => {
     console.log(data);
   };
   return (
-    <div>
-      <AuthForm></AuthForm>
-      <div>
-        <button name="google" onClick={onSocialClick}>
-          Continue with Google
-        </button>
-        <button name="github" onClick={onSocialClick}>
-          Continue with github
-        </button>
+    <div className="container text-center">
+      <div
+        className="row justify-content-center align-items-center"
+        style={{ height: "100vh" }}
+      >
+        <div className="col-6 border border-primary p-5 rounded bg-primary">
+          <h1 className="font-weight-bold">NWITTER</h1>
+          <AuthForm></AuthForm>
+          <div className="row">
+            <button
+              className="col btn btn-outline-success bg-white"
+              name="google"
+              onClick={onSocialClick}
+            >
+              Continue with Google
+            </button>
+            <button
+              className="col btn btn-outline-success bg-white"
+              name="github"
+              onClick={onSocialClick}
+            >
+              Continue with github
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

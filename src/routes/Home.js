@@ -22,6 +22,7 @@ function Home({ userObj }) {
   return (
     <div>
       <NweetFactory userObj={userObj}></NweetFactory>
+      <div class="b-example-divider"></div>
       <div>
         {nweets.map((item) => {
           return (

@@ -30,7 +30,7 @@ const Nweet = ({ nweetObj, isOwner }) => {
   }
   const toggleEditing = () => Setediting((prev) => !prev);
   return (
-    <div>
+    <div className="container shadow-lg">
       {editing ? (
         <>
           <form onSubmit={onSubmit}>
@@ -45,19 +45,23 @@ const Nweet = ({ nweetObj, isOwner }) => {
           <button onClick={toggleEditing}>CANCEL</button>
         </>
       ) : (
-        <div>
-          <h4>{nweetObj.text}</h4>
+        <div className="row justify-content-start p-3 bg-secondary ">
+          <h4 className="col-6 border-bottom border-black rounded h-auto text-white">{nweetObj.text}</h4>
           {nweetObj.attachmentURL && (
-            <img src={nweetObj.attachmentURL} width="50px" height="50px"></img>
+            <img src={nweetObj.attachmentURL} className="rounded mx-auto d-block"></img>
           )}
           {isOwner && (
-            <>
-              <button onClick={onDeleteClick}> Delete nweet</button>
-              <button onClick={toggleEditing}>update nweet</button>
-            </>
+            <div className="col-6">
+              <div className="row justify-content-around">
+              <button class="btn btn-primary col-5" onClick={toggleEditing}>update nweet</button>
+              <button class="btn btn-primary mx-1 col-5" onClick={onDeleteClick}> Delete nweet</button>
+              </div>
+            </div>
           )}
         </div>
       )}
+      
+
     </div>
   );
 };
