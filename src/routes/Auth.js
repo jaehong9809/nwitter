@@ -25,7 +25,7 @@ const Auth = () => {
         className="row justify-content-center align-items-center"
         style={{ height: "100vh" }}
       >
-        <div className="col-6 border border-primary p-5 rounded bg-primary">
+        <div className="col-lg-6 col-xs-10 border border-primary p-5 rounded bg-primary">
           <h1 className="font-weight-bold">NWITTER</h1>
           <AuthForm></AuthForm>
           <div className="row">

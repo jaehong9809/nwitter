@@ -25,7 +25,7 @@ function App() {
     }
     return (<div className="container-fluid bg-secondary overflow-scroll">
         <div className="row justify-content-center" style={{height:"100vh"}}>
-            <div className="col-8">
+            <div className="col-md-8 col-xs-10">
         {init?<Approuter refreshUser={refreshUser} isLoggedin={isLoggedin} userObj={userObj}/>:"Initializing..."}
         </div>
         </div>

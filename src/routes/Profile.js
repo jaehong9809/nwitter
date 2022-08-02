@@ -40,15 +40,15 @@ function Profile({ refreshUser, userObj }) {
     }
   }
   return (
-    <div className="container row justify-content-around m-3">
+    <div className="container row justify-content-center m-3">
       <form onSubmit={onSubmit} className="row justify-content-around p-5">
-        <input className="col-6 shadow-lg"
+        <input className="col-lg-6 col-xs-12 shadow-lg"
           onChange={onChange}
           type="text"
           placeholder="display name"
           value={newDisplayName}
         ></input>
-        <button type="submit" className="col-3 btn btn-primary">update profile</button>
+        <button type="submit" className="col-lg-3 col-xs-12 btn btn-primary">update profile</button>
       </form>
       <button onClick={onLogOutClick} className="col-3 btn btn-danger">Log Out</button>
     </div>
